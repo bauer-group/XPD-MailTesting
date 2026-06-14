@@ -1,0 +1,44 @@
+# =============================================================================
+# Taskfile — convenience wrappers around docker compose
+# =============================================================================
+# Cross-platform task runner (https://taskfile.dev). Install:
+#   winget install Task.Task   |   brew install go-task   |   choco install go-task
+# Run `task` (or `task --list`) to see available commands.
+# =============================================================================
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - task --list
+    silent: true
+
+  up:
+    desc: Start the stack in the background
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop the stack (keeps mailbox data)
+    cmds:
+      - docker compose down
+
+  reset:
+    desc: Stop the stack and wipe all captured mail
+    cmds:
+      - docker compose down -v
+
+  logs:
+    desc: Follow Mailpit logs
+    cmds:
+      - docker compose logs -f mailpit
+
+  status:
+    desc: Show container status and health
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Update to the latest Mailpit image
+    cmds:
+      - docker compose pull

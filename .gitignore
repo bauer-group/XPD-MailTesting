@@ -1,0 +1,15 @@
+# Local configuration (never commit real values)
+.env
+.env.*
+!.env.example
+
+# Mailpit database (only relevant if a bind mount is ever used)
+*.db
+*.db-wal
+*.db-shm
+*.sqlite*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini

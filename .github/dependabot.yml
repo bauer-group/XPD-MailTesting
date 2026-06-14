@@ -1,8 +1,9 @@
 # =============================================================================
 # Dependabot Configuration
 # =============================================================================
-# Monitors Docker base images for updates
-# Combined with docker-maintenance.yml workflow for auto-merge and release
+# Keeps GitHub Actions versions up to date.
+# The Mailpit image is not tracked here — it uses the floating :latest tag;
+# update with `docker compose pull`.
 # =============================================================================
 
 version: 2
